@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNameSpaceShemaLocation="hesap.xsd"-->
+<shops>
+	<shop name="Birim">
+		<address> 
+			BİRİM ALIŞVERİŞ MERK. MAĞÇ REK. İT. İHR. SAN. TİC.A.Ş. - FETHİYE ŞUBE TUZLA MH. M. KEMAL BUL. NO:47 FETHİYE MUĞLA ANTALYA KURUMLAR V.D. 1780714034
+		</address>
+		<purchases>
+			<purchase>
+				<datePurchase>2023-01-14</datePurchase>
+				<timePurchase>12:45:00</timePurchase>
+				<checkNumber>0064</checkNumber>
+				<totalCost currency="TL">291.90</totalCost>
+				<totalTax currency="TL">35.59</totalTax>
+				<taxes>
+					<tax currency="TL" percent="8">8.44</tax>
+					<tax currency="TL" percent="18">27.15</tax>
+				</taxes>
+				<products>
+					<product>
+						<id>8691900174032</id>
+						<name>KOTEX PED ULTRA NORM</name>
+						<taxPercent>%08</taxPercent>
+						<price currency="TL">44.50</price>			
+					</product> 
+					<product>
+						<id>8699516742515</id>
+						<name>ALDANO MILANO PAITIK</name>
+						<taxPercent>%08</taxPercent>
+						<price currency="TL">4.90</price>			
+					</product>
+					<product>
+						<id>8680510053844</id>
+						<name>CHEFSTAR MNB05384 CE</name>
+						<taxPercent>%18</taxPercent>
+						<price currency="TL">44.50</price>			
+					</product> 
+					<product>
+						<id>8695122006706</id>
+						<name>TITIZ 670 MANDAL</name>
+						<taxPercent>%18</taxPercent>
+						<price currency="TL">14.50</price>			
+					</product> 
+					<product>
+						<id>8682560440186</id>
+						<name>FLODEX 12LI TULALET</name>
+						<taxPercent>%08</taxPercent>
+						<price currency="TL">64.50</price>			
+					</product> 
+					<product>
+						<id>8683143500211</id>
+						<name>EMAYHOME 261 FLAT SA</name>
+						<taxPercent>%18</taxPercent>
+						<price currency="TL">119.00</price>			
+					</product>
+				</products>
+			</purchase>
+		</purchases>
+	</shop>
+	<shop name="Migros">
+		<address> 
+			FETHİYE SATIS MAĞAZASI TUZLA MAH. MUSTAFA KEMAL BLV. NO:8 FETHİYE MUĞLA			
+		</address>
+		<phone>0(850)3102100</phone>
+		<centralAddress>
+			ATATÜRK MAH. TUGUT ÖZAL BULV. NO:7 ATAŞEHİR/İSTANBUL
+		</centralAddress>
+		<purchases>
+			<purchase>
+				<datePurchase>2023-01-15</datePurchase>
+				<timePurchase>19:38:00</timePurchase>
+				<checkNumber>6002080160743186</checkNumber>
+				<totalCost currency="TL">183.52</totalCost>
+				<totalTax currency="TL">7.36</totalTax>
+				<taxes>
+					<tax currency="TL" percent="1">1.23</tax>
+					<tax currency="TL" percent="8">2.74</tax>
+					<tax currency="TL" percent="18">3.39</tax>
+				</taxes>
+				<products>
+					<product>
+						<name>ACTIVIA PROPRE KRMZ</name>
+						<taxPercent>%01</taxPercent>
+						<price currency="TL">19.95</price>			
+					</product> 
+					<product>
+						<name>ELMA KURUSU KG</name>
+						<weight unit="kg">0.142</weight>
+						<priceKG currency="TL">190.00</priceKG>
+						<taxPercent>%01</taxPercent>
+						<price currency="TL">26.98</price>			
+					</product> 
+					<product>
+						<name>BISCOLATA PIA KEK</name>
+						<taxPercent>%01</taxPercent>
+						<price currency="TL">18.00</price>			
+					</product> 
+					<product>
+						<name>GRISINI - HASHASLI K</name>
+						<weight unit="kg">0.150</weight>
+						<priceKG currency="TL">150.00</priceKG>
+						<taxPercent>%01</taxPercent>
+						<price currency="TL">22.50</price>			
+					</product> 
+					<product>
+						<name>MIGROS TEMIZLIK BEZI</name>
+						<taxPercent>%08</taxPercent>
+						<price currency="TL">11.25</price>			
+					</product> 
+					<product>
+						<name>MIGROS GOP TORBASI</name>
+						<taxPercent>%18</taxPercent>
+						<price currency="TL">12.50</price>			
+					</product> 
+					<product>
+						<name>AYTUG MODAL KDN. GRB.</name>
+						<taxPercent>%08</taxPercent>
+						<price currency="TL">42.90</price>
+						<sale currency="TL" percent="40">-17.16</sale>
+					</product> 
+					<product>
+						<name>POLONEZ KARABIBERLI</name>
+						<taxPercent>%01</taxPercent>
+						<price currency="TL">21.90</price>			
+					</product> 
+					<product>
+						<name>MIGROS BULSK. SUNGERI</name>
+						<taxPercent>%18</taxPercent>
+						<price currency="TL">9.75</price>			
+					</product> 
+					<product>
+						<name>SEK QUARK YABAN MERS</name>
+						<taxPercent>%01</taxPercent>
+						<price currency="TL">14.95</price>			
+					</product> 
+				</products>
+			</purchase>
+			<purchase>
+				<datePurchase>2023-01-21</datePurchase>
+				<timePurchase>19:15:00</timePurchase>
+				<checkNumber>6002080160743186</checkNumber>
+				<totalCost currency="TL">185.84</totalCost>
+				<totalTax currency="TL">1.84</totaltax>
+				<taxes>
+					<tax currency="TL" percent="1">1.84</tax>
+				</taxes>
+				<products>
+					<product>
+						<name>KIZILAY NAR ARM. ICC.</name>
+						<taxPercent>%01</taxPercent>
+						<price currency="TL">42.25</price>			
+					</product> 
+					<product>
+						<name>MIGROS TURK SAMONU</name>
+						<taxPercent>%01</taxPercent>
+						<price currency="TL">69.95</price>			
+					</product> 
+					<product>
+						<name>POLONEZ FIST.SALA</name>
+						<taxPercent>%01</taxPercent>
+						<price currency="TL">26.90</price>			
+					</product> 
+					<product>
+						<name>BISKOLATA PIA KEK</name>
+						<weight unit="kg">0.318</weight>
+						<priceKG currency="TL">89.90</priceKG>
+						<taxPercent>%01</taxPercent>
+						<price currency="TL">18.00</price>			
+					</product> 
+					<product>
+						<name>PASA LOKUM KG</name>
+						<taxPercent>%01</taxPercent>
+						<price currency="TL">28.59</price>			
+					</product> 
+
+				</products>
+			</purchase>	
+		</purchases>
+	</shop>		
+</shops>
