@@ -172,9 +172,83 @@
 						<taxPercent>%01</taxPercent>
 						<price currency="TL">28.59</price>			
 					</product> 
-
 				</products>
-			</purchase>	
+			</purchase>
+			<purchase>
+				<datePurchase>2023-02-07</datePurchase>
+				<timePurchase>09:51:00</timePurchase>
+				<checkNumber>0007</checkNumber>
+				<totalCost currency="TL">451.23</totalCost>
+				<totalTax currency="TL">6.24</totaltax>
+				<taxes>
+					<tax currency="TL" percent="1">4.19</tax>
+					<tax currency="TL" percent="8">2.05</tax>
+				</taxes>
+				<products>
+					<product>
+						<name>MAYLO PUF MENDIL</name>
+						<taxPercent>%08</taxPercent>
+						<price currency="TL">21.90</price>			
+					</product> 
+					<product>
+						<name>KINDER KINGUI 30G</name>
+						<taxPercent>%01</taxPercent>
+						<price currency="TL">4.75</price>			
+					</product> 
+					<product>
+						<name>KINDER SUT DILMI 28G</name>
+						<taxPercent>%01</taxPercent>
+						<price currency="TL">4.25</price>			
+					</product>
+					<product>
+						<name>KINDER DELICE 39G</name>
+						<taxPercent>%01</taxPercent>
+						<price currency="TL">9.90</price>			
+					</product>
+					<product>
+						<name>MINTES ISP. CEP MEND. #6002080160743186</name>
+						<taxPercent>%08</taxPercent>
+						<price currency="TL">2.90</price>			
+					</product> 
+					<product>
+						<name>MINTES ISP. CEP MEND.</name>
+						<taxPercent>%08</taxPercent>
+						<price currency="TL">2.90</price>			
+					</product> 
+					<product>
+						<name>MIGROS BALDO PIRINC</name>
+						<taxPercent>%01</taxPercent>
+						<price currency="TL">32.50</price>			
+					</product> 
+					<product>
+						<name>BISCOLATA PIA CIKOLA</name>
+						<taxPercent>%01</taxPercent>
+						<price currency="TL">18.00</price>			
+					</product>
+					<product>
+						<name>KUZU CORBALIK KIVIR</name>
+						<weight unit="kg">0.658</weight>
+						<priceKG currency="TL">13.9</priceKG>
+						<taxPercent>%01</taxPercent>
+						<price currency="TL">9.15</price>			
+					</product> 
+					<product>
+						<name>DANA ROSTOLUK ET</name>
+						<weight unit="kg">1.184</weight>
+						<priceKG currency="TL">248.9</priceKG>
+						<taxPercent>%01</taxPercent>
+						<price currency="TL">294.70</price>			
+					</product>
+					<product>
+						<name>KUZU YUREK</name>
+						<weight unit="kg">0.404</weight>
+						<priceKG currency="TL">124.45</priceKG>
+						<taxPercent>%01</taxPercent>
+						<price currency="TL">50.28</price>			
+					</product>
+				</products>
+			</purchase>			
+			
 		</purchases>
 	</shop>		
 </shops>
