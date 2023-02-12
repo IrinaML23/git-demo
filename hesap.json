@@ -1,0 +1,196 @@
+{
+  "shops": [
+    {
+      "shopName": "Birim",
+      "address": "BİRİM ALIŞVERİŞ MERK. MAĞÇ REK. İT. İHR. SAN. TİC.A.Ş. - FETHİYE ŞUBE TUZLA MH. M. KEMAL BUL. NO:47 FETHİYE MUĞLA ANTALYA KURUMLAR V.D. 1780714034",
+      "purchases": [
+        {
+          "datePurchase": "2023-01-14",
+          "timePurchase": "12:45:00",
+          "checkNumber": "0064",
+          "purchaseCurrency": "TL",
+          "totalCost": 291.9,
+          "totalTax": 35.59,
+          "taxes": [
+            {
+              "tax": 8.44,
+              "taxPercent": 8
+            },
+            {
+              "tax": 27.15,
+              "taxPercent": 18
+            }
+          ],
+          "products": [
+            {
+              "id": 8691900174032,
+              "name": "KOTEX PED ULTRA NORM",
+              "taxPercent": 8,
+              "price": 44.5
+            },
+            {
+              "id": 8699516742515,
+              "name": "ALDANO MILANO PAITIK",
+              "taxPercent": 8,
+              "price": 4.9
+            },
+            {
+              "id": 8680510053844,
+              "name": "CHEFSTAR MNB05384 CE",
+              "taxPercent": 18,
+              "price": 44.5
+            },
+            {
+              "id": 8695122006706,
+              "name": "TITIZ 670 MANDAL",
+              "taxPercent": 18,
+              "price": 14.5
+            },
+            {
+              "id": 8682560440186,
+              "name": "FLODEX 12LI TULALET",
+              "taxPercent": 8,
+              "price": 64.5
+            },
+            {
+              "id": 8683143500211,
+              "name": "EMAYHOME 261 FLAT SA",
+              "taxPercent": 18,
+              "price": 119.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "shopName": "Migros",
+      "address": "FETHİYE SATIS MAĞAZASI TUZLA MAH. MUSTAFA KEMAL BLV. NO:8 FETHİYE MUĞLA",
+      "phone": "0(850)3102100",
+      "centralAddress": "ATATÜRK MAH. TUGUT ÖZAL BULV. NO:7 ATAŞEHİR/İSTANBUL",
+      "purchases": [
+        {
+          "datePurchase": "2023-01-15",
+          "timePurchase": "19:38:00",
+          "checkNumber": "6002080160743186",
+          "purchaseCurrency": "TL",
+          "totalCost": 183.52,
+          "totalTax": 7.36,
+          "taxes": [
+            {
+              "tax": 1.23,
+              "taxPercent": 1
+            },
+            {
+              "tax": 2.74,
+              "taxPercent": 8
+            },
+            {
+              "tax": 3.39,
+              "taxPercent": 18
+            }
+          ],
+          "products": [
+            {
+              "name": "ACTIVIA PROPRE KRMZ",
+              "taxPercent": 1,
+              "price": 19.95
+            },
+            {
+              "name": "ELMA KURUSU KG",
+              "weight": 0.142,
+              "weightUnit": "kg",
+              "pricePerKg": 190,
+              "taxPercent": 1,
+              "price": 26.98
+            },
+            {
+              "name": "BISCOLATA PIA KEK",
+              "taxPercent": 1,
+              "price": 18.0
+            },
+            {
+              "name": "GRISINI - HASHASLI K",
+              "weight": 0.15,
+              "weightUnit": "kg",
+              "pricePerKg": 150,
+              "taxPercent": 1,
+              "price": 22.5
+            },
+            {
+              "name": "MIGROS TEMIZLIK BEZI",
+              "taxPercent": 8,
+              "price": 11.25
+            },
+            {
+              "name": "MIGROS GOP TORBASI",
+              "taxPercent": 18,
+              "price": 12.5
+            },
+            {
+              "name": "AYTUG MODAL KDN. GRB.",
+              "taxPercent": 8,
+              "price": 42.9,
+              "sale": -17.16,
+              "salePercent": 40
+            },
+            {
+              "name": "POLONEZ KARABIBERLI",
+              "taxPercent": 1,
+              "price": 21.9
+            },
+            {
+              "name": "MIGROS BULSK. SUNGERI",
+              "taxPercent": 18,
+              "price": 9.75
+            },
+            {
+              "name": "SEK QUARK YABAN MERS",
+              "taxPercent": 1,
+              "price": 14.95
+            }
+          ]
+        },
+        {
+          "datePurchase": "2023-01-21",
+          "timePurchase": "19:15:00",
+          "checkNumber": "6002080160743186",
+          "totalCost": 185.84,
+          "totalTax": 1.84,
+          "taxes": [
+            {
+              "tax": 1.84,
+              "taxPercent": 1
+            }
+          ],
+          "products": [
+            {
+              "name": "KIZILAY NAR ARM. ICC.",
+              "taxPercent": 1,
+              "price": 42.25
+            },
+            {
+              "name": "MIGROS TURK SAMONU",
+              "taxPercent": 1,
+              "price": 69.95
+            },
+            {
+              "name": "POLONEZ FIST.SALA",
+              "taxPercent": 1,
+              "price": 26.9
+            },
+            {
+              "name": "BISKOLATA PIA KEK",
+              "taxPercent": 1,
+              "price": 18.0
+            },
+            {
+              "name": "PASA LOKUM KG",
+              "taxPercent": 1,
+              "price": 28.59
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

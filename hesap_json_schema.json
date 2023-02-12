@@ -1,0 +1,65 @@
+{
+"$schema": "http://json-schema.org/draft-04/schema#",
+ "description": "Current shops and purchases",
+ "type":"object",
+ "properties":{
+ "shops":{	 
+	 "type":"array",
+	 "items":
+		{
+			"type":"object",
+			"properties":
+				{
+					"shopName":{"type":"string"},
+					"address":{"type":"string"},
+					"phone":{"type":"string"},
+					"centralAddress":{"type":"string"},
+
+					"purchases":
+						{
+							"type":"array",
+							"items":
+								{
+									"datePurchase":{"type":"string"},
+									"timePurchase":{"type":"string"},
+									"checkNumber":{"type":"string"},
+									"purchaseCurrency":{"type":"string","enum":["TL"]},
+									"totalCost":{"type":"number"},
+									"totalTax":{"type":"number"},
+									"taxes":
+										{
+											"type":"array",
+											"items":
+												{
+													"tax":{"type":"number"},
+													"taxPercent":{"type":"integer","enum":[1,8,18]}
+												},
+												"required":["tax","taxPercent"]
+										},
+									"products":
+										{
+											"type":"array",
+											"items":
+												{
+													"id":{"type":"number"},
+													"name":{"type":"string"},
+													"weight":{"type":"number"},	
+													"weightUnit":{"type":"string","maxLength":2},
+													"pricePerKg":{"type":"number"},
+													"taxPercent":{"type":"integer","enum":[1,8,18]},
+													"price":{"type":"number"},
+													"sale":{"type":"number","exclusiveMaximum": 0},
+													"salePercent":{"type":"integer", "minimum": 0, "exclusiveMaximum": 100}
+												},
+												"required":["name","taxPercent","price"]
+										}
+								},
+								"required":["datePurchase","timePurchase","checkNumber","purchaseCurrency","totalCost","totalTax","taxes","products"]
+						}		
+				},
+			"required":["shopName","address","purchases"],
+		}
+ }
+ }
+}
+

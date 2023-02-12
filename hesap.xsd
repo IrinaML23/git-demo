@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:annotation>
+		<xsd:documentation>
+			Purchase validation schema
+		</xsd:documentation>
+		<xsd:appinfo>
+			Version: 1.0
+			Data: 14.01.2023
+		</xsd:appinfo> 	
+	</xsd:annotation>
+
+	<xsd:element name="shops">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="shop" minOccurs="1" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>		
+	</xsd:element>
+	
+	<xsd:element name="shop">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="address" type="xsd:string"/>
+				<xsd:element name="phone" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="centralAddress" type="xsd:string" minOccurs="0"/>				
+				<xsd:element ref="purchases"/>
+			</xsd:sequence>
+			<xsd:attribute name="name" type="xsd:string"/>
+		</xsd:complexType>		
+	</xsd:element>
+	
+	<xsd:element name="purchases">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="purchase" minOccurs="1" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	
+	<xsd:element name="purchase">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="datePurchase" type="xsd:date"/>
+				<xsd:element name="timePurchase" type="xsd:time"/>
+				<xsd:element name="checkNumber" type="xsd:string"/>
+				<xsd:element ref="totalCost"/>
+				<xsd:element ref="totalTax"/>
+				<xsd:element ref="taxes"/>
+				<xsd:element ref="products"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="totalCost">
+		<xsd:complexType >
+			<xsd:simpleContent>
+				<xsd:extension base="xsd:decimal">
+					<xsd:attribute ref="currency"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="totalTax">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="xsd:decimal">
+					<xsd:attribute ref="currency"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="taxes">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="tax" minOccurs="1" maxOccurs="100"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="tax">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="xsd:decimal">
+					<xsd:attribute ref="currency"/>
+					<xsd:attribute ref="percent"/>	
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>	
+	
+	<xsd:element name="products">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="product" minOccurs="1" maxOccurs="unbounded"/>
+			</xsd:sequence>			
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="product">
+		<xsd:complexType>
+				<xsd:sequence>
+					<xsd:element ref="id" minOccurs="0"/>
+					<xsd:element name="name" type="xsd:string"/>
+					<xsd:element ref="weight" minOccurs="0"/>
+					<xsd:element ref="priceKG" minOccurs="0"/>
+					<xsd:element ref="taxPercent"/>
+					<xsd:element ref="price" maxOccurs="1"/> 
+					<xsd:element ref="sale" minOccurs="0"/>					
+				</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="id" type="xsd:positiveInteger">
+		<xsd:unique name="idName">
+			<xsd:selector xpath="id"/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+	</xsd:element>
+	
+	<xsd:element name="taxPercent">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="%[0-9]{2}"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+
+	<xsd:element name="weight">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="xsd:decimal">
+					<xsd:attribute ref="unit"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="priceKG">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="xsd:decimal">
+					<xsd:attribute ref="currency"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="price">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="xsd:decimal">
+					<xsd:attribute ref="currency"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="sale">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="salePrice">
+					<xsd:attribute ref="currency"/>
+					<xsd:attribute ref="percent"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+			
+	<xsd:attribute name="currency">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="TL"/>
+			</xsd:restriction>
+		</xsd:simpleType>	
+	</xsd:attribute>
+	
+	<xsd:attribute name="percent">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:integer">
+				<xsd:minInclusive value="0"/>			
+				<xsd:maxInclusive value="100"/>
+			</xsd:restriction>
+		</xsd:simpleType>	
+	</xsd:attribute>
+	
+	<xsd:attribute name="unit">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="kg"/>			
+			</xsd:restriction>
+		</xsd:simpleType>						
+	</xsd:attribute>
+	
+	<xsd:simpleType name="salePrice">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:maxExclusive value="0"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+
+
+	
+	<!-- 
+	ELEMENT
+	1. SimpleType
+		<xsd:element name="">
+			<xsd:simpleType>...
+			</xsd:simpleType>
+		</xsd:element>		
+	2. ComplexType
+		<xsd:element name="">
+			<xsd:complexType>...
+			</xsd:complexType>
+		</xsd:element>	
+	3. REF / minOccurs (default = 1, could be >=1 or unbounded) / maxOccurs / default or fixed
+		<xsd:element name="comment" type="xsd:string"/>
+		<xsd:element ref="comment" minOccurs="0"/>
+		
+		<xsd:element name="color" type="xsd:string" default="red"/>
+		<xsd:element name="color" type="xsd:string" fixed="red"/>
+
+	ATTRIBUTE
+	1.	<xsd:attribute name="XXX" type="xsd:YYY" use="required"/> required, optional, prohibited / default or fixed
+		
+	2.	<xsd:attribute name="">
+			<xsd:simpleType>
+				<xsd:restiction base="xsd:float">
+					<xsd:minExclusive value="0">
+				</xsd:restiction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		
+	3.	
+		<restiction>
+		<list>
+		<union>
+		
+		<xsd:attribute name="myInteger">
+			<xsd:restriction base="xsd:integer">
+				<xsd:minInclusive value="100"/>
+				<xsd:maxInclusive value="900"/>				
+			</xsd:restriction>
+		</xsd:attribute>
+		
+		<xsd:attribute name="myString">
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="\d{3}-[A-Z]{2}"/>
+			</xsd:restriction>
+		</xsd:attribute>
+		
+		<xsd:attribute name="USState">
+			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="AK"/>
+				<xsd:enumeration value="AL"/>
+			</xsd:restriction>
+		</xsd:attribute>
+		
+		<xsd:attribute name="zipUnion">
+			<xsd:union memberTypes="myString USState"/>
+		</xsd:attribute>
+		union can contains pattern and enumeration
+	4. Types
+			string
+			normalizedString
+			token
+			Byte
+			unsignedByte
+			base64Binary
+			hexBinary
+			integer
+			positiveInteger
+			negativeInteger
+			nonNegativeInteger
+			nonPositiveInteger
+			int
+			unsignedInt
+			long
+			unsignedLong
+			short
+			unsignedShort
+			decimal
+			float
+			double
+			boolean
+			time
+			dateTime
+			duration
+			date
+			gMonth
+			gYear
+			gYearMonth
+			gDay
+			gMonthDay
+			Name
+			QName
+			NCName
+			anyURI
+			language
+			ID
+			IDREFS
+			ENTITY
+			ENTITIES
+			NOTATION
+			NMTOKEN
+			NMTOKENS
+			boolean?
+	5.  RESTRICTION
+			length
+			minLength
+			maxLength
+			pattern
+			enumeration
+			whiteSpace
+			maxInclusive
+			minInclusive
+			maxExclusive
+			minExclusive
+			totalDigits
+			fractionalDigits
+
+			<xsd:element name="city" type="TypeCity" default="FETHIYE"/>
+			<xsd:simpleType name="TypeCity"> GLOBAL TYPE
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="FETHIYE"/>
+					<xsd:enumeration value="MUGLA"/>
+					<xsd:enumeration value="ISTANBUL"/>
+					<xsd:enumeration value="IZMIR"/>				
+				</xsd:resrtiction>
+			</xsd:simpleType>
+		
+		   <xsd:element name="phone">
+			<xsd:simpleType>  LOCAL  TYPE
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="14"/>
+				</xsd:resrtiction>
+			</xsd:simpleType>		   
+		   </xsd:element>
+		
+	6. COMPLEX TYPE
+		1. для элементов с символьным содержимым и атрибутом без вложенных элементов
+		<xsd:element name="internationPrice">
+			<xsd:complexType>
+				<xsd:simpleContent>
+					<xsd:extension base="xsd:decimal">
+						<xsd:attribute name="currency" type="xsd:string"/>
+					</xsd:extension>
+				</xsd:simpleContent>
+			</xsd:complexType>
+		</xsd:element>
+	
+		
+	7. EXTENSION & RESRTICTION
+		
+		<xsd:element name="shopName">
+			<xsd:complexType>
+				<xsd:simpleContent>
+					<xsd:extension base="TypeShopName">
+						<xsd:attribute ref="type""/>
+					</xsd:extension>
+				</xsd:simpleContent>
+			</xsd:complexType>
+		</xsd:element>
+		<xsd:simpleType name="TypeShopName">
+			<xsd:restriction>
+				<xsd:enumeration value='OOO"FMarket"'/>
+			</xsd:restriction>
+		</xsd:simpleType>
+		
+	8. <SEQUENCE> (порядок элементов)
+		<xsd:complexType name="USAddress">
+			<xsd:sequence>
+				<xsd:element name="name" type="xsd:string"/>
+				<xsd:element name="street" type="xsd:string"/>
+				<xsd:element name="city" type="xsd:string"/>
+				<xsd:element name="state" type="xsd:string"/>
+				<xsd:element name="zip" type="xsd:decimal"/>
+			</xsd:sequence>
+			<xsd:attribute name="country" type="xsd:NMTOKEN" fixed="US"/>			
+		</xsd:complexType>		
+		
+		<CHOICE> (один из элементов может появиться в документе) 
+		<xsd:complexType name="PurchaseOrderType">
+			<xsd:sequence>
+				<xsd:choice>
+					<xsd:element name="complexUSAddress" type="complexUSAddress"/>
+					<xsd:element name="singleUSAddress" type="USAddress"/>
+				</xsd:choice>
+				<xsd:element name="comment" ref="comment" minOccurs="0"/>
+				<xsd:element name="items" type="Items"/>
+			</xsd:sequence>
+			<xsd:attribute name="orderDate" type="xsd:date" />	
+		</xsd:complexType>
+		
+		<ALL> (элементы в произвольном порядке, но не более одного раза)
+		<xsd:complexType name="PurchaseOrderType">
+			<xsd:all>
+				<xsd:element name="shipTo" type="USAddress"/>
+				<xsd:element name="billTo" type="USAddress"/>
+				<xsd:element name="comment" ref="comment" minOccurs="0"/>
+				<xsd:element name="items" type="Items"/>
+			</xsd:all>
+			<xsd:attribute name="orderDate" type="xsd:date" />	
+		</xsd:complexType>
+		
+	9. MIXED
+		
+		<letterBody>
+			<salutation>
+				Dear Mr. <name> Robert Smith </name>
+			</salutation>
+			Your order of <quantity> 1 </quantity> <productName> Baby Monitor </productName> shipped from our warehouse on <shipDate>2023-01-14</shipDate>		
+		</letterBody>
+		
+		<complexType mixed="true"> - разрешение на присутствие символьных данных 
+		
+	10. ANYTYPE - никак не ограничивает элемент
+		<xsd:element name="name" type="xsd:anyType"/> эквивалентно
+		<xsd:element name="name" />
+		
+		any - задает любой элемент
+		<xsd:any minOccurs="0"/>
+		anyAttribute - задает любой аттрибут
+		
+		
+	11. EMPTY ELEMENT
+		<internationalPrice currency="EUR" value="426.17"/>
+		
+		<xsd:element name="internationalPrice">
+			<xsd:complexType>
+				<xsd:complexContent>
+					<xsd:restriction base="xsd:anyType">
+						<xsd:attribute name="currency" type="xsd:string"/>
+						<xsd:attribute name="value" type="xsd:decimal"/>
+					</xsd:restriction>
+				</xsd:complexContent>
+			</xsd:complexType>
+		</xsd:element>
+		
+		if minOccurs="2" maxOccurs="2" - значит повторяется 2 раза
+		
+	12. UNIQUE - city should be unique
+		<cities>
+			<city name="FETHIYE" country="TYRKIYE"/>
+			<city name="ISTANBUL" country="TYRKIYE"/>			
+		</cities>
+		
+		<xsd:element name="cities">
+			<xsd:complexType>
+				<xsd:sequence>
+					<xsd:element ref="city" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:unique name="cityName">
+				<xsd:selector xpath="city"/>
+				<xsd:field xpath="@name"/>
+			</xsd:unique>
+		</xsd:element>
+		
+		Нарушение ключа
+		<cities>
+			<city name="FETHIYE" country="TYRKIYE"/>
+			<city name="ISTANBUL" country="TYRKIYE"/>			
+		</cities>
+		<persons>
+			<person name ="Mehmet" city="FETHIYE"/>
+		</persons>
+		
+		...
+		</xsd:complexType>
+		<xsd:key name="cityName">
+			<xsd:selector xpath="cities/city"/>
+			<xsd:field xpath="@name"/>
+		</xsd:key>
+		<xsd:keyref name="personCity" refer="cityName">
+			<xsd:selector xpath="persons/person"/>
+			<xsd:field xpath="@city"/>
+		</xsd:keyref>
+		
+	</xsd:element>
+
+    13. <group> <attributeGroup>
+	
+	<xsd:element name="letterBody">
+		<xsd:complexType>
+			<xsd:group ref="elems"/>
+		</xsd:compexType>
+	</xsd:element>
+	<xsd:group name="elems">
+		<xsd:sequence>
+			<xsd:element name="salution"/>
+			<xsd:element name="quantity" type="xsd:positiveInteger"/>			
+			<xsd:element name="produceName" type="xsd:string"/>	
+			<xsd:element name="shipDate" type="xsd:date" minOccurs="0"/>			
+		</xsd:sequence>
+	</xsd:group>
+	
+G@mmiKopek3425
+CloudFlare
+	-->
+</xsd:schema>
